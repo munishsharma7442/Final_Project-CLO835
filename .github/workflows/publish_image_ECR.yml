@@ -2,9 +2,10 @@
 name: Deploy app image to aws ECR
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ prod ]
     paths:
       - webapp/*
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
