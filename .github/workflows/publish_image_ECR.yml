@@ -1,12 +1,11 @@
-# Workflow to build docker image of Cats code and push to Amazon ECR 
-name: Deploy Application image to Amazon ECR
-
-# Controls when the workflow will run
+# Workflow to build docker image of Cats code and push to Amazon ECR
+name: Deploy app image to aws ECR
 on:
- pull_request:
-  branches:[ prod ]
-  paths:
-   - webapp/*
+  pull_request:
+    branches: [ prod ]
+    paths:
+      - webapp/*
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
