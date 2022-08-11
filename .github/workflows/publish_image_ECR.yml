@@ -3,12 +3,10 @@ name: Deploy Application image to Amazon ECR
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push request events but only for the master branch on cats directory
-  push:
-    branches:
-      - prod
-    paths:
-      - webapp/*  
+ pull_request:
+  branches:[ prod ]
+  paths:
+   - webapp/*
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
