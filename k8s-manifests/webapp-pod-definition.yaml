@@ -1,24 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: simple-webapp-mysql
-  labels:
-    app: example-app
-    name: simple-webapp-mysql
+  name: aws-cli
+  namespace: final
 spec:
+  serviceAccountName: clo835
   containers:
-  - name: simple-webapp-mysql
-    image: kodekloud/simple-webapp-mysql
-    ports:
-    - containerPort: 8080
-    volumeMounts:
-    - name: app-secret-volumes
-      mountPath: "/opt/app-secret-volumes"
-      readOnly: true
-    envFrom:
-      - secretRef:
-          name: app-secret
-  volumes:
-    - name: app-secret-volumes
-      secret:
-        secretName: app-secret
+  - name: aws-cli
+    image: amazon/aws-cli:latest
+    command:
+      - sleep
+      - "3600"
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always
