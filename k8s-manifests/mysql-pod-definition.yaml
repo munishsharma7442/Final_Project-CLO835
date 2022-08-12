@@ -8,8 +8,23 @@ spec:
   containers:
   - name: mysql
     image: mysql
+    volumeMounts:
+    - mountPath: /data/db
+      name: vol-mysql    
     ports:
     - containerPort: 3306
     env:
-      - name: MYSQL_ROOT_PASSWORD
-        value: paswrd
+    - name: DB_User
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: DB_User
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: DB_Password
+  volumes:
+    - name: vol-mysql
+      persistentVolumeClaim:
+        claimName: pvc-mysql
