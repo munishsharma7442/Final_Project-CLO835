@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/app: mysql
         app.kubernetes.io/name: mysql
     spec:
-      serviceAccountName: clo835
+      serviceAccountName: clo
       containers:
       - name: mysql
         image: mysql
