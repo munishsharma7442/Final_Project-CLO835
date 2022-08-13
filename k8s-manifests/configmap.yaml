@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-config
+data:
+  IMAGE_URL_PATH: "/clo835/config/image_url"
+  GROUP: "Group-17"
+  IMAGE_URL_S3: "https://clo835-project.s3.amazonaws.com/"
