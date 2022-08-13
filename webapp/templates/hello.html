@@ -1,5 +1,5 @@
 <!doctype html>
-<title>Hello All from Group 17 - nice work</title>
+<title>Hello All from {{ GROUP }} </title>
 <body style="background: {{ color }};"></body>
 <div style="color: #e4e4e4;
     text-align:  center;
@@ -7,15 +7,17 @@
     vertical-align:  middle;">
 
   {% if db_connect_result %}
-    <img src="{{ IMAGE_URL_PASS }}">
+    <img src="{{ IMAGE_URL_PATH }}/success.jpg">
     <h3> Successfully connected to the MySQL database.</h3>
+    <h4> Image URL is {{ IMAGE_URL_S3 }} </h4>
   {% else %}
-    <img src="{{ url_for('static', filename='img/failed.png') }}">
+    <img src="{{ url_for('static', filename='{{ IMAGE_URL_PATH }}/failed.png') }}">
     <h3> Failed connecting to the MySQL database. </h3>
+    <h4> Image URL is {{ IMAGE_URL_S3 }} </h4>
   {% endif %}
 
   {% if debug %}
-    <h2> {{ debug }} </h2>
+   <h2> {{ debug }} </h2>
   {% endif %}
 
   {% if name %}
