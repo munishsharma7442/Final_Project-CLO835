@@ -40,7 +40,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
-        IMAGE_TAG: cats-v${{ steps.version.outputs.VERSION }}
+        IMAGE_TAG: webapp-v${{ steps.version.outputs.VERSION }}
       run: |
         cd webapp/
         ls -ltra
