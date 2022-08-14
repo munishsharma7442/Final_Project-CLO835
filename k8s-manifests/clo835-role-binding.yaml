@@ -5,7 +5,7 @@ metadata:
   namespace: final
 subjects:
 - kind: ServiceAccount
-  name: clo835
+  name: clo-835
   apiGroup: ""
 roleRef:
   kind: Role
