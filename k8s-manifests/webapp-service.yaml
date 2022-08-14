@@ -9,7 +9,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 81
   selector:
     app.kubernetes.io/app: webapp
     app.kubernetes.io/name: webapp-mysql
