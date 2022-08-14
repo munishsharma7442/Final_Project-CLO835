@@ -67,7 +67,7 @@ spec:
               name: webapp-config
               key:  GROUP
         ports:
-        - containerPort: 8080
+        - containerPort: 81
         lifecycle:
           postStart:
             exec:
