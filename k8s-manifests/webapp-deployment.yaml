@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/app: webapp
         app.kubernetes.io/name: webapp-mysql
     spec:
-      serviceAccountName: clo
+      serviceAccountName: clo-835
       containers:
       - name: aws-cli
         image: amazon/aws-cli:latest
